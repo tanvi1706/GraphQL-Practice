@@ -17,7 +17,7 @@ app.use(
   })
 );
 const uri =
-  "mongodb+srv://ush:tanvi88@cluster0.gwuxm.mongodb.net/gptest?retryWrites=true&w=majority";
+  "mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.gwuxm.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority";
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose
   .connect(uri, options)
